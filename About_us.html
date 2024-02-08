@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .contact-container {
+        width: 100%;
+        height: 50vh;
+        background: linear-gradient(
+          to bottom,
+          white,
+          rgba(245, 222, 179, 0.601)
+        );
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .contact-text {
+        width: 55%;
+      }
+      .contact-img {
+        width: 40%;
+        height: 100%;
+      }
+      .contact-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .contact-text h1 {
+        font-size: 3rem;
+      }
+      .contact-text p {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      .about-intro {
+        display: flex;
+        height: 22rem;
+        width: 100%;
+        padding: 40px;
+        flex-wrap: wrap;
+        /* overflow: hidden; */
+      }
+      .left-intro {
+        padding: 1rem;
+        width: 50%;
+        /* height: 20rem; */
+        font-size: 3rem;
+        line-height: 3.5rem;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .right-intro {
+        padding: 1.3rem;
+        width: 50%;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+      }
+      .right-intro p {
+        margin-bottom: 2rem;
+      }
+       
+     
+
+      .image-section {
+        width: 100%;
+        height: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4%;
+      }
+      .main-img {
+        background-image: url("images/about_us1.jpg");
+        background-size: cover;
+        height: 30rem;
+        width: 95%;
+      }
+      .small-img {
+        display: flex;
+        justify-content: space-around;
+        gap: 2%;
+        width: 95%;
+        flex-wrap: wrap;
+        /* padding-left: 5%;
+        padding-right: 5%; */
+      }
+      .images {
+        height: 43vh;
+        width: 30%;
+        background-size: cover;
+        margin-bottom: 5vh;
+      }
+      .img1 {
+        background-image: url("images/about_us2.jpg");
+      }
+      .img2 {
+        background-image: url("images/about_us3.jpg");
+      }
+      .img3 {
+        background-image: url("images/about_us4.jpg");
+      }
+      .staff-section {
+        background-color: #f5f5f5;
+        width: 100%;
+        height: 44rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8%;
+      }
+      .staff-intro {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        height: 33rem;
+        gap: 4%;
+      }
+      .staff-img {
+        background-image: url("images/about-staff.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 40%;
+        height: 100vh;
+      }
+      .staff-intro h1 {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+      .staff-intro h3 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: sandybrown;
+      }
+      .staff-intro p {
+        line-height: 1.5rem;
+      }
+      
+        
+        
+
+     
+
+      /* what set us apart section */
+      .about-mainCardContainer {
+        width: 100%;
+        height: auto;
+        padding-bottom: 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        color: black;
+      }
+      .about-mainCardContainer p {
+        font-size: 3rem;
+      }
+
+      .about-card-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        gap: 3%;
+      }
+
+      .about-card {
+        display: flex;
+        flex-direction: column;
+        width: 25rem;
+        height: 27rem;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 2%;
+        gap: 2%;
+      }
+      .about-card img {
+        width: 100%;
+        height: 58%;
+        object-fit: cover;
+        transition: all 0.2s ease-in-out;
+      }
+      .about-card-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .about-card-content h2 {
+        margin: 1rem 0;
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+      .about-card-content span {
+        line-height: 1.4rem;
+      }
+
+      .about-card button:hover ~ .brnd {
+        opacity: 1;
+        z-index: 10;
+      }
+      /* location */
+      .location{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 35rem;
+        text-align: center;
+        flex-direction: column;
+        gap: 8%;
+      }
+      
+      .location-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:39rem;
+        width: 100%;
+        gap: 2%;
+        background: linear-gradient(
+          to bottom,
+          white,
+          rgba(245, 222, 179, 0.601)
+        );
+      }
+
+      .location-map
+      {
+        width: 70%;
+        height: 70vh;
+      }
+      @media screen and (max-width: 970px) {
+        .image-section{
+            height: 50rem;
+          }
+          .main-img{
+            height: 25rem;
+          }
+          .about-intro{
+            height: 24.5rem;
+          }
+          .left-intro{
+            font-size: 2rem;
+            line-height: 2.5rem;
+          }
+          .right-intro p{
+            margin-bottom: 1rem;
+          }
+          .right-intro{
+            line-height: 1.3rem;
+          }
+          .staff-section{
+            flex-direction: column;
+            height: 60rem;
+            gap: 7%;
+          }
+          .staff-intro{
+            width: 75%;
+          }
+          .staff-img{
+            width: 75%;
+          }
+      }
+      @media screen and (max-width: 690px) {
+        .about-intro{
+          flex-wrap: nowrap;
+          flex-direction: column;
+          padding: 30px;
+          height: 25rem;
+          overflow: visible;
+        }
+        .about-mainCardContainer p {
+        font-size: 2rem;
+      }
+        .image-section{
+            height: 40rem;
+          }
+        .main-img{
+            width: 90%;
+            height: 17rem;
+          }
+          .small-img{
+            width: 90%;
+          }
+        .left-intro{
+          width: 100%;
+        }
+        .right-intro{
+          width: 100%;
+        }
+        .img3{
+          display: none;
+        }
+        .images{
+          width: 46%;
+        }
+        .staff-intro h1{
+          font-size: 2rem;
+        }
+        .staff-intro h3{
+          font-size: 1.5rem;
+        }
+      }
+      @media screen and (max-width: 510px) {
+        .about-card {
+          width: 75%;
+        }
+        .about-intro{
+          padding: 7%;
+          height: 27.5rem;
+        }
+        .staff-img{
+          height: 61vh;
+        }
+        .staff-section{
+          height: 70rem;
+        }
+        .staff-intro{
+          height: 38rem;
+        }
+        .image-section{
+            height: 25rem;
+          }
+        .main-img{
+            width: 84%;
+            height: 10rem;
+          }
+          .small-img{
+            width: 84%;
+          }
+          .images{
+            height: 28vh;
+          }
+        .left-intro{
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+        }
+        .location-map{
+          height: 60vh;
+        }
+      }
+      
+      @media screen and (max-width: 445px) {
+            .staff-intro{
+              height: 43rem;
+            }
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+      <div class="contact-text">
+        <h1>About Us</h1>
+        <p>Home / About Us</p>
+      </div>
+      <div class="contact-img"><img src="images/about_us.png" alt="" /></div>
+    </div>
+    <div class="about-intro">
+      <div class="left-intro">
+        <span>SETTING THE BENCHMARK FOR EXCELLENCE IN BEAUTY & WELLNESS</span>
+      </div>
+      <div class="right-intro">
+        <p>
+          Myrah is the luxury beauty & wellness destination in Mumbai. With over
+          a decade of experience, and a commitment to providing exceptional
+          service and a serene environment, we offer a truly indulgent and
+          rejuvenating experience for our guests.
+        </p>
+        <p>
+          From our luxurious facilities, our attention to detail in every aspect
+          of the wellness experience, and our warm and welcoming hospitality, we
+          strive to create an oasis where our guests can escape from the stress
+          of everyday life and feel happy.
+        </p>
+      </div>
+    </div>
+    <div class="image-section">
+      <div class="main-img"></div>
+      <div class="small-img">
+        <div class="img1 images"></div>
+        <div class="img2 images"></div>
+        <div class="img3 images"></div>
+      </div>
+    </div>
+    <div class="staff-section">
+      <div class="staff-intro">
+        <h1>NISHA JAVERI</h1>
+        <h3>Founder & CEO</h3>
+        <p>
+          Keenly aware of the transformative influence that beauty and wellness
+          could have, Nisha has always been disciplined about her health.
+          However, she noticed that there was a distinct lack of quality
+          offerings in the industry. Driven by a desire to elevate the standards
+          of luxury, she decided to start Myrah in 2007. A spa that at its core
+          embodied the very essence of quality and luxury. Through consistency,
+          discipline, and unmatched attention to detail, Myrah has grown into an
+          renowned brand, known for its unwavering commitment to
+          excellence. Myrah has since expanded into salon and dermatology
+          services, providing guests with a complete and unparalleled luxury
+          experience that caters to all of their needs.For this
+          reason Nisha ensured that Myrah only hired the most qualified
+          dermatologists and beauty professions, and utilised the highest
+          quality equipment, ensuring that guests receive the highest quality of
+          care and exceptional results.Throughout it all, Nisha’s refusal to
+          compromise on quality, even when faced with numerous cheaper
+          alternatives, has cemented Myrah’s position as a leader in the
+          industry; where the transformative power of beauty and wellness paired
+          with luxury and excellence offer guests an unmatched experience.
+        </p>
+      </div>
+      <div class="staff-img"></div>
+    </div>
+    <div class="about-mainCardContainer">
+      <br /><br />
+      <p>WHAT SETS US APART</p>
+      <br /><br />
+      <div class="about-card-container">
+        <div class="about-card">
+          <img src="images/about_us5.jpg" alt="Card Image 1" />
+
+          <div class="about-card-content">
+            <h2>Focus on Luxury</h2>
+            <span
+              >We understand the importance of luxury, ambiance, and pristine
+              hygiene. Our guests can relax and unwind in an impeccably clean
+              environment, while indulging in luxurious services that leave them
+              feeling pampered and rejuvenated.</span
+            >
+          </div>
+        </div>
+
+        <div class="about-card">
+          <img src="images/about_us6.jpg" alt="Card Image 2" />
+          <div class="about-card-content">
+            <h2>Commitment To Quality</h2>
+            <span
+              >We achieve this by hiring only the most skilled staff, who
+              undergo continuous training, and our strict adherence to procedure
+              that ensures every guest receives the exceptional service they
+              deserve.</span
+            >
+          </div>
+        </div>
+
+        <div class="about-card">
+          <img src="images/about_us7.jpg" alt="Card Image 2" />
+          <div class="about-card-content">
+            <h2>State of the Art Equipment</h2>
+            <span
+              >We utilise only the highest quality, FDA approved, equipment
+              which has been proven to give best . This commitment to
+              cutting-edge technology ensures that guests receive the most
+              advanced and effective treatments available.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="location">
+      <div class="location-card">
+        <h1>OUR LOCATION</h1>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.411409167045!2d86.18194947260217!3d22.787214679339353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e3672c1be6d7%3A0xf5d7623219ea1562!2sGinger%20Jamshedpur!5e0!3m2!1sen!2sin!4v1706937453668!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="location-map"></iframe>
+          <h2>Jamshedpur</h2>
+          <p>Gautam's Trade Center,R Road Bistupur</p>
+          <p>Jamshedpur,831001</p>
+      </div>
+    </div>
+  </body>
+</html>
